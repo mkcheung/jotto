@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import checkPropTypes from 'check-prop-types';
 
 import Congrats from './components/Congrats';
-import { checkProp, findByTestAttr } from '../test/testUtils';
+import { checkProps, findByTestAttr } from '../test/testUtils';
 
 
 const defaultProps = {
@@ -41,5 +41,5 @@ test('renders non-empty congrats message when `success` prop is true', () => {
 
 test('does not throw warning with expected props', () => {
 	const expectedProps = { success:false };
-	checkProp(Congrats, expectedProps);
+	checkProps(Congrats, expectedProps);
 });
