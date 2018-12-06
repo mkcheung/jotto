@@ -50,15 +50,15 @@ describe('if there are words guessed', () => {
 	let wrapper;
 	let guessedWords = [
 		{
-			guessed: 'train',
+			guessedWord: 'train',
 			letterMatchCount:3,
 		},
 		{
-			guessed: 'agile',
+			guessedWord: 'agile',
 			letterMatchCount:1,
 		},
 		{
-			guessed: 'party',
+			guessedWord: 'party',
 			letterMatchCount:5,
 		}
 	];

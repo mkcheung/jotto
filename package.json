@@ -3,34 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "ajv": "^6.6.1",
-    "prop-types": "^15.6.2",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-redux": "^6.0.0",
-    "react-scripts": "2.1.1",
-    "redux": "^4.0.1"
+    "axios": "^0.18.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "devDependencies": {
+    "ajv": "^6.4.0",
     "check-prop-types": "^1.1.2",
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.7.0",
-    "jest": "^23.6.0",
-    "jest-enzyme": "^7.0.1"
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.4.3",
+    "jest-enzyme": "^6.0.0",
+    "moxios": "^0.4.0"
   }
 }
