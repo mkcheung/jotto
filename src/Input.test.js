@@ -10,7 +10,6 @@ const defaultProps = {
 	success: false
 };
 
-
 const setup = (initialState={}) => {
 	const store = storeFactory(initialState);
 	const wrapper = shallow(<Input store={store} />).dive();
@@ -49,7 +48,7 @@ describe('render', () => {
 		beforeEach(() => {
 			const initialState = { success:true };
 			wrapper = setup(initialState);
-		})
+		});
 
 		test('renders component without error', () => {
 			const component = findByTestAttr(wrapper,'component-input')
@@ -65,6 +64,22 @@ describe('render', () => {
 			expect(submitButton.length).toBe(0);
 		});
 
+	});
+});
+
+describe('redux props', () => {
+
+	test('has success piece of state as a prop', () => {
+		const success = true;
+		const wrapper = setup({success});
+		const successProp = wrapper.instance().props.success;
+		expect(successProp).toBe(success);
+	});
+
+	test('`guessWord` action creator is a function prop', () => {
+		const success = true;
+		const guessWordProp = wrapper.instance().props.guessWord;
+		expect(guessWordProp).toBeInstanceOf(Function);
 	});
 });
 
