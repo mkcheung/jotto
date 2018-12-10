@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 
-import App from './App';
+import App, { UnconnectedApp } from './App';
 import { storeFactory, checkProps, findByTestAttr } from '../test/testUtils';
 
 const setup = ( state={}) => {
@@ -41,5 +41,21 @@ test('render without error', () => {
 	const wrapper = setup();
 	const appComponent = findByTestAttr(wrapper, 'component-app');
 	expect(appComponent.length).toBe(1);
+});
+
+
+test('`getSecretWord` runs on App mount', () => {
+	const getSecretWordMock = jest.fn();
+
+	const props = {
+		getSecretWord: getSecretWordMock,
+		success:false,
+		guessedWords:[]
+	};
+
+	const wrapper = shallow(<UnconnectedApp {...props} />);
+	wrapper.instance().componentDidMount();
+	const getSecretWordCallCount = getSecretWordMock.mock.calls.length;
+	expect(getSecretWordCallCount).toBe(1);
 });
 
